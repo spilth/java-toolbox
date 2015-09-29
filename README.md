@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/TheJavaToolbox/java-toolbox.svg?style=svg)](https://circleci.com/gh/TheJavaToolbox/java-toolbox)
+
 # The Java Toolbox
 
 Java Library and Tool Discovery Website
