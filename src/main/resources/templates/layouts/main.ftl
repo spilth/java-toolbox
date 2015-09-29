@@ -10,9 +10,29 @@
     <link rel="stylesheet" href="/webjars/bootswatch-slate/3.3.1+2/css/bootstrap.min.css">
     <script src="/webjars/jquery/2.1.4/jquery.min.js"></script>
     <script src="/webjars/bootswatch-slate/3.3.1+2/js/bootstrap.min.js"></script>
-    <style>body {
-        padding-top: 60px;
-    }</style>
+    <style>
+        body {
+            padding-top: 60px;
+            margin-bottom: 80px;
+
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            /* Set the fixed height of the footer here */
+            height: 60px;
+        }
+
+        .footer-center {
+            text-align: center;
+        }
+
+        .footer-right {
+            text-align: right;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -37,6 +57,24 @@
         <#nested>
     </div>
 </div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row text-muted">
+            <div class="col-md-4 col-sm-4 footer-left">
+                <a href="https://github.com/TheJavaToolbox/java-toolbox">Website Source Code</a>
+            </div>
+            <div class="col-md-4 col-sm-4 footer-center">
+                &copy; 2015 The Java Toolbox
+            </div>
+            <div class="col-md-4 col-sm-4 footer-right">
+                Hosted on <a href="https://run.pivotal.io">Pivotal Web Services</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 </body>
 </html>
 
