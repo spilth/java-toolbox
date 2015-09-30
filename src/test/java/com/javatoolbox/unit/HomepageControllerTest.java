@@ -47,7 +47,7 @@ public class HomepageControllerTest {
     public void homepageIndex_rendersIndex() throws Exception {
         List<Project> projects = new ArrayList<>();
 
-        when(projectsRepository.findAll()).thenReturn(projects);
+        when(projectsRepository.findAllByOrderByNameAsc()).thenReturn(projects);
 
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())

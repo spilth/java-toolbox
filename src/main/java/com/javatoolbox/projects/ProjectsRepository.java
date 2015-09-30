@@ -2,4 +2,8 @@ package com.javatoolbox.projects;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface ProjectsRepository extends CrudRepository<Project, Long> {}
+import java.util.List;
+
+public interface ProjectsRepository extends CrudRepository<Project, Long> {
+    List<Project> findAllByOrderByNameAsc();
+}

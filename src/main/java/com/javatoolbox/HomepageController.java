@@ -13,7 +13,7 @@ public class HomepageController {
 
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("projects", projectsRepository.findAll());
+        model.addAttribute("projects", projectsRepository.findAllByOrderByNameAsc());
 
         return "index";
     }
