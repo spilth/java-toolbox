@@ -14,6 +14,10 @@ public class Project {
 
     private String description;
 
+    private String websiteUrl;
+    private String sourcecodeUrl;
+    private String issuesUrl;
+
     public Long getId() {
         return id;
     }
@@ -36,5 +40,29 @@ public class Project {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getWebsiteUrl() {
+        return websiteUrl;
+    }
+
+    public void setWebsiteUrl(String websiteUrl) {
+        this.websiteUrl = websiteUrl;
+    }
+
+    public String getSourcecodeUrl() {
+        return sourcecodeUrl;
+    }
+
+    public void setSourcecodeUrl(String sourcecodeUrl) {
+        this.sourcecodeUrl = sourcecodeUrl;
+    }
+
+    public String getIssuesUrl() {
+        return issuesUrl;
+    }
+
+    public void setIssuesUrl(String issuesUrl) {
+        this.issuesUrl = issuesUrl;
     }
 }

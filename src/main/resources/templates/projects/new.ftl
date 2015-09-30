@@ -16,6 +16,24 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">Website URL</label>
+            <div class="col-sm-10">
+                <input id="websiteUrl" name="websiteUrl" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">Sourcecode URL</label>
+            <div class="col-sm-10">
+                <input id="sourcecodeUrl" name="sourcecodeUrl" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">Issues URL</label>
+            <div class="col-sm-10">
+                <input id="issuesUrl" name="issuesUrl" type="text" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <input type="submit" value="Create Project" class="btn btn-primary" />
             </div>

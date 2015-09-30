@@ -19,14 +19,20 @@ public class AdministrationTest extends SeleniumTest {
         goTo(getDefaultBaseUrl() + "/admin");
 
         find("a").withText("New Project").click();
-        find("#name").fill("pegdown");
-        find("#description").fill("foo");
+        find("#name").fill("Java Toolbox");
+        find("#description").fill("A website for discovering Java libraries and tools");
+        find("#websiteUrl").fill("http://www.java-toolbox.com/");
+        find("#sourcecodeUrl").fill("https://github.com/TheJavaToolbox/java-toolbox");
+        find("#issuesUrl").fill("https://github.com/TheJavaToolbox/java-toolbox/issues");
         find("input[type=submit]").click();
 
-        find("h1").should().contain("pegdown");
+        find("h1").should().contain("Java Toolbox");
+        find("body").should().contain("Website");
+        find("body").should().contain("Source Code");
+        find("body").should().contain("Bug Tracker");
 
         find("#projects").click();
-        find("body").should().contain("pegdown");
+        find("body").should().contain("Java Toolbox");
     }
 
     @Override
