@@ -14,7 +14,7 @@ public class AdminController {
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String index(Model model) {
-        model.addAttribute("projects", projectsRepository.findAll());
+        model.addAttribute("projects", projectsRepository.findAllByOrderByNameAsc());
 
         return "admin/index";
     }
