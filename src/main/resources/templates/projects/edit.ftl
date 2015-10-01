@@ -1,5 +1,5 @@
 <@main title="New Project">
-    <h1>New Project</h1>
+    <h1>Edit Project</h1>
 
     <form action="/admin/projects/${project.id}" method="POST" class="form-horizontal">
         <input type="hidden" name="_method" value="PUT" />
