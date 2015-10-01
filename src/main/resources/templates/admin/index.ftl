@@ -1,7 +1,9 @@
 <@main title="Admin">
     <h1>Admin</h1>
 
+
     <p><a href="/admin/projects/new" class="btn btn-primary">New Project</a></p>
+    <p><a href="/admin/categories/new" class="btn btn-primary">New Category</a></p>
 
     <table class="table">
         <thead>

@@ -1,6 +1,8 @@
 package com.javatoolbox.unit;
 
 import com.javatoolbox.ToolboxApplication;
+import com.javatoolbox.categories.CategoriesRepository;
+import com.javatoolbox.categories.Category;
 import com.javatoolbox.projects.Project;
 import com.javatoolbox.projects.ProjectsAdminController;
 import com.javatoolbox.projects.ProjectsRepository;
@@ -35,6 +37,9 @@ public class ProjectsAdminControllerTest {
     @Mock
     ProjectsRepository projectsRepository;
 
+    @Mock
+    CategoriesRepository categoriesRepository;
+
     private MockMvc mockMvc;
 
     @Before
@@ -45,6 +50,14 @@ public class ProjectsAdminControllerTest {
 
     @Test
     public void projectNew_rendersNewForm() throws Exception {
+        List<Category> categories = new ArrayList<>();
+        Category category = new Category();
+        category.setId(42l);
+        category.setName("HTML and Markup");
+        categories.add(category);
+
+        when(categoriesRepository.findAll()).thenReturn(categories);
+
         mockMvc.perform(get("/admin/projects/new"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("projects/new"));
@@ -52,6 +65,14 @@ public class ProjectsAdminControllerTest {
 
     @Test
     public void projectCreate_createsProject() throws Exception {
+        List<Category> categories = new ArrayList<>();
+        Category category = new Category();
+        category.setId(42l);
+        category.setName("HTML and Markup");
+        categories.add(category);
+
+        when(categoriesRepository.findAll()).thenReturn(categories);
+
         Project persistedProject = new Project();
         persistedProject.setId(42l);
 
@@ -59,7 +80,9 @@ public class ProjectsAdminControllerTest {
 
         mockMvc.perform(post("/admin/projects")
                 .param("name", "pegdown")
-                .param("description", "description"))
+                .param("description", "description")
+                .param("categoryId", "42")
+        )
                 .andExpect(redirectedUrl("/projects/42"));
     }
 }

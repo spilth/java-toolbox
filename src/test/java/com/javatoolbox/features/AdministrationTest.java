@@ -15,12 +15,30 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @IntegrationTest("server.port:9000")
 public class AdministrationTest extends SeleniumTest {
     @Test
-    public void addingProjects() {
+    public void addingContent() {
+        addCategory();
+        addProject();
+    }
+
+    private void addCategory() {
+        goTo(getDefaultBaseUrl() + "/admin");
+
+        find("a").withText("New Category").click();
+        find("#name").fill("HTML and Markup");
+        find("input[type=submit]").click();
+        find("h1").should().contain("HTML and Markup");
+
+        find("#categories").click();
+        find("body").should().contain("HTML and Markup");
+    }
+
+    private void addProject() {
         goTo(getDefaultBaseUrl() + "/admin");
 
         find("a").withText("New Project").click();
         find("#name").fill("Java Toolbox");
         find("#description").fill("A website for discovering Java libraries and tools");
+        find("#categoryId").select("HTML and Markup");
         find("#websiteUrl").fill("http://www.java-toolbox.com/");
         find("#sourcecodeUrl").fill("https://github.com/TheJavaToolbox/java-toolbox");
         find("#issuesUrl").fill("https://github.com/TheJavaToolbox/java-toolbox/issues");

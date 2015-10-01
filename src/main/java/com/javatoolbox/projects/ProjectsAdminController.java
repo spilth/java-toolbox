@@ -1,16 +1,22 @@
 package com.javatoolbox.projects;
 
+import com.javatoolbox.categories.CategoriesRepository;
+import com.javatoolbox.categories.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class ProjectsAdminController {
     @Autowired
-    ProjectsRepository projectsRepository;
+    private ProjectsRepository projectsRepository;
+
+    @Autowired
+    private CategoriesRepository categoriesRepository;
 
     @RequestMapping(value = "/admin/projects/new", method = RequestMethod.GET)
     public String projectNew(Model model) {
@@ -19,7 +25,7 @@ public class ProjectsAdminController {
     }
 
     @RequestMapping(value = "/admin/projects", method = RequestMethod.POST)
-    public String projectCreate(Project project) {
+    public String projectCreate(Project project, @RequestParam Long categoryId) {
         project = projectsRepository.save(project);
 
         return "redirect:/projects/" + project.getId();
@@ -41,5 +47,17 @@ public class ProjectsAdminController {
         projectsRepository.save(project);
 
         return "redirect:/projects/" + project.getId();
+    }
+
+    @ModelAttribute("categoriesMap")
+    private Map<String, String> getCategories() {
+        Iterable<Category> categories = categoriesRepository.findAll();
+
+        Map<String, String> categoriesMap = new HashMap();
+        for (Category category : categories) {
+            categoriesMap.put(String.valueOf(category.getId()), category.getName());
+        }
+
+        return categoriesMap;
     }
 }

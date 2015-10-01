@@ -5,3 +5,11 @@ INSERT INTO project (
 ), (
   2, 'PDFBox', 'The Apache PDFBox™ library is an open source Java tool for working with PDF documents. This project allows creation of new PDF documents, manipulation of existing documents and the ability to extract content from documents.'
 );
+
+INSERT INTO categories (
+  id, name
+) VALUES (
+  1, 'HTML and Markup'
+), (
+  2, 'CSS'
+);

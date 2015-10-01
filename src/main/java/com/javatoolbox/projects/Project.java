@@ -11,12 +11,12 @@ public class Project {
     Long id;
 
     private String name;
-
     private String description;
-
     private String websiteUrl;
     private String sourcecodeUrl;
     private String issuesUrl;
+
+    private Long categoryId;
 
     public Long getId() {
         return id;
@@ -64,5 +64,13 @@ public class Project {
 
     public void setIssuesUrl(String issuesUrl) {
         this.issuesUrl = issuesUrl;
+    }
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 }

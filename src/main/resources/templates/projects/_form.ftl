@@ -11,6 +11,12 @@
     </div>
 </div>
 <div class="form-group">
+    <label for="summary" class="col-sm-2 control-label">Category</label>
+    <div class="col-sm-10">
+    <@spring.formSingleSelect "project.categoryId", categoriesMap, "class='form-control'" />
+    </div>
+</div>
+<div class="form-group">
     <label for="title" class="col-sm-2 control-label">Website URL</label>
     <div class="col-sm-10">
     <@spring.formInput "project.websiteUrl",  "class='form-control'" />
