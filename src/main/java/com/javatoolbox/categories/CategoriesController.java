@@ -14,7 +14,7 @@ public class CategoriesController {
 
     @RequestMapping(value = "/categories", method = RequestMethod.GET)
     public String categoryIndex(Model model) {
-        model.addAttribute("categories", categoriesRepository.findAll());
+        model.addAttribute("categories", categoriesRepository.findAllByOrderByNameAsc());
 
         return "categories/index";
     }
