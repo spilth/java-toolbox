@@ -14,7 +14,8 @@ public class Category {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name= "categoryId")
+    @JoinColumn(name = "categoryId")
+    @OrderBy("name")
     private Set<Project> projects;
 
     public Long getId() {
