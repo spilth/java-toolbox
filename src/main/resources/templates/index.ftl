@@ -1,8 +1,21 @@
-<@main title="Home">
-    <h1>Projects</h1>
-    <ul>
-    <#list projects as project>
-        <li><a href="/projects/${project.id}">${project.name}</a> - ${project.description}</li>
-    </#list>
-    </ul>
+<@main title="Projects by Category">
+<h1>Projects by Category</h1>
+
+<#list categories as category>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title"><a href="/categories/${category.id}">${category.name}</a></h2>
+    </div>
+    <div class="panel-body">
+        <dl>
+            <#list category.projects as project>
+                <dt><a href="/projects/${project.id}">${project.name}</a></dt>
+                <dd>${project.description}</dd>
+            </#list>
+        </dl>
+    </div>
+</div>
+
+</#list>
+
 </@main>

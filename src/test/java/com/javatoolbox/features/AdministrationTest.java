@@ -28,7 +28,7 @@ public class AdministrationTest extends SeleniumTest {
         find("input[type=submit]").click();
         find("h1").should().contain("HTML and Markup");
 
-        find("#categories").click();
+        find("#projects").click();
         find("body").should().contain("HTML and Markup");
     }
 

@@ -1,9 +1,9 @@
 package com.javatoolbox.unit;
 
-import com.javatoolbox.ToolboxApplication;
 import com.javatoolbox.HomepageController;
-import com.javatoolbox.projects.Project;
-import com.javatoolbox.projects.ProjectsRepository;
+import com.javatoolbox.ToolboxApplication;
+import com.javatoolbox.categories.CategoriesRepository;
+import com.javatoolbox.categories.Category;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,9 +20,7 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -33,7 +31,7 @@ public class HomepageControllerTest {
     HomepageController homepageController;
 
     @Mock
-    ProjectsRepository projectsRepository;
+    CategoriesRepository categoriesRepository;
 
     private MockMvc mockMvc;
 
@@ -45,13 +43,13 @@ public class HomepageControllerTest {
 
     @Test
     public void homepageIndex_rendersIndex() throws Exception {
-        List<Project> projects = new ArrayList<>();
+        List<Category> categories = new ArrayList<>();
 
-        when(projectsRepository.findAllByOrderByNameAsc()).thenReturn(projects);
+        when(categoriesRepository.findAllByOrderByNameAsc()).thenReturn(categories);
 
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("index"))
-                .andExpect(model().attribute("projects", projects));
+                .andExpect(model().attribute("categories", categories));
     }
 }
