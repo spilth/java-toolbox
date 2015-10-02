@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags-->
     <title>${title} - The Java Toolbox</title>
-    <link rel="stylesheet" href="/webjars/bootswatch-slate/3.3.1+2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/webjars/bootswatch-yeti/3.3.1+2/css/bootstrap.min.css">
     <script src="/webjars/jquery/2.1.4/jquery.min.js"></script>
-    <script src="/webjars/bootswatch-slate/3.3.1+2/js/bootstrap.min.js"></script>
+    <script src="/webjars/bootswatch-yeti/3.3.1+2/js/bootstrap.min.js"></script>
     <style>
         html {
             position: relative;

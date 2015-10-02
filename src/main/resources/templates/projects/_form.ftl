@@ -34,3 +34,15 @@
     <@spring.formInput "project.issuesUrl",  "class='form-control'" />
     </div>
 </div>
+<div class="form-group">
+    <label for="title" class="col-sm-2 control-label">groupId</label>
+    <div class="col-sm-10">
+    <@spring.formInput "project.groupId",  "class='form-control'" />
+    </div>
+</div>
+<div class="form-group">
+    <label for="title" class="col-sm-2 control-label">artifactId</label>
+    <div class="col-sm-10">
+    <@spring.formInput "project.artifactId",  "class='form-control'" />
+    </div>
+</div>

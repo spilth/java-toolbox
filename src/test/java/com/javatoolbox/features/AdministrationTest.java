@@ -42,6 +42,8 @@ public class AdministrationTest extends SeleniumTest {
         find("#websiteUrl").fill("http://www.java-toolbox.com/");
         find("#sourcecodeUrl").fill("https://github.com/TheJavaToolbox/java-toolbox");
         find("#issuesUrl").fill("https://github.com/TheJavaToolbox/java-toolbox/issues");
+        find("#groupId").fill("org.spilth");
+        find("#artifactId").fill("blog");
         find("input[type=submit]").click();
 
         find("h1").should().contain("Java Toolbox");

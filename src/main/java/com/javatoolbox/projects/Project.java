@@ -15,6 +15,8 @@ public class Project {
     private String websiteUrl;
     private String sourcecodeUrl;
     private String issuesUrl;
+    private String groupId;
+    private String artifactId;
 
     private Long categoryId;
 
@@ -72,5 +74,27 @@ public class Project {
 
     public void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public String getArtifactId() {
+        return artifactId;
+    }
+
+    public void setArtifactId(String artifactId) {
+        this.artifactId = artifactId;
+    }
+
+    public boolean isMavenDependency() {
+        if (groupId == null) return false;
+        if (artifactId == null) return false;
+        return !groupId.isEmpty() && !artifactId.isEmpty();
     }
 }
