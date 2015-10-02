@@ -17,12 +17,11 @@
         }
 
         body {
-            padding-top: 60px;
             margin-bottom: 80px;
         }
 
         body > .container {
-            padding: 70px 15px 0;
+            padding: 45px 15px 0;
         }
 
         .footer {
