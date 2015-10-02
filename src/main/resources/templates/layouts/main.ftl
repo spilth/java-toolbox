@@ -11,10 +11,18 @@
     <script src="/webjars/jquery/2.1.4/jquery.min.js"></script>
     <script src="/webjars/bootswatch-slate/3.3.1+2/js/bootstrap.min.js"></script>
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
         body {
             padding-top: 60px;
             margin-bottom: 80px;
+        }
 
+        body > .container {
+            padding: 70px 15px 0;
         }
 
         .footer {
@@ -31,6 +39,11 @@
 
         .footer-right {
             text-align: right;
+        }
+
+        .footer > .container {
+            padding-right: 15px;
+            padding-left: 15px;
         }
     </style>
 </head>
