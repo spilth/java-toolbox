@@ -1,9 +1,10 @@
 <@main title="Admin">
     <h1>Admin</h1>
 
-
-    <p><a href="/admin/projects/new" class="btn btn-primary">New Project</a></p>
-    <p><a href="/admin/categories/new" class="btn btn-primary">New Category</a></p>
+    <div class="btn-group" role="group" aria-label="...">
+        <a href="/admin/categories/new" class="btn btn-default">New Category</a>
+        <a href="/admin/projects/new" class="btn btn-default">New Project</a>
+    </div>
 
     <table class="table">
         <thead>
