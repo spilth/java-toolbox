@@ -8,47 +8,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags-->
     <title>${title} - The Java Toolbox</title>
     <link rel="stylesheet" href="/webjars/bootswatch-yeti/3.3.1+2/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/java-toolbox.css'>
     <script src="/webjars/jquery/2.1.4/jquery.min.js"></script>
     <script src="/webjars/bootswatch-yeti/3.3.1+2/js/bootstrap.min.js"></script>
-    <style>
-        html {
-            position: relative;
-            min-height: 100%;
-        }
-
-        body {
-            margin-bottom: 80px;
-        }
-
-        body > .container {
-            padding: 45px 15px 0;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            /* Set the fixed height of the footer here */
-            height: 60px;
-        }
-
-        .footer-center {
-            text-align: center;
-        }
-
-        .footer-right {
-            text-align: right;
-        }
-
-        .footer > .container {
-            padding-right: 15px;
-            padding-left: 15px;
-        }
-
-        dd {
-            margin-bottom: 15px;
-        }
-    </style>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
