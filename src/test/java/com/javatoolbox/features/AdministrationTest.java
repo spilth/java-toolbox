@@ -29,7 +29,7 @@ public class AdministrationTest extends SeleniumTest {
         find("h1").should().contain("HTML and Markup");
 
         find("#projects").click();
-        find("body").should().contain("HTML and Markup");
+        find("body").should().not().contain("HTML and Markup");
     }
 
     private void addProject() {
