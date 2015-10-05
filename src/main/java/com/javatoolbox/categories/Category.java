@@ -16,7 +16,7 @@ public class Category {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "categoryId")
-    @Where(clause = "enabled = 'Y'")
+    @Where(clause = "enabled = 1")
     @OrderBy("name")
     private Set<Project> projects;
 
