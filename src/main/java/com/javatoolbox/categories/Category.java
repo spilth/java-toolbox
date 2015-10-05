@@ -1,6 +1,7 @@
 package com.javatoolbox.categories;
 
 import com.javatoolbox.projects.Project;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -15,6 +16,7 @@ public class Category {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "categoryId")
+    @Where(clause = "enabled = 'Y'")
     @OrderBy("name")
     private Set<Project> projects;
 

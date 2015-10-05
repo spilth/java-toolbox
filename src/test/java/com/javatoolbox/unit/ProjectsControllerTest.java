@@ -1,8 +1,9 @@
 package com.javatoolbox.unit;
 
-import com.javatoolbox.projects.ProjectsController;
 import com.javatoolbox.ToolboxApplication;
+import com.javatoolbox.categories.CategoriesRepository;
 import com.javatoolbox.projects.Project;
+import com.javatoolbox.projects.ProjectsController;
 import com.javatoolbox.projects.ProjectsRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,6 +31,9 @@ public class ProjectsControllerTest {
 
     @Mock
     ProjectsRepository projectsRepository;
+
+    @Mock
+    CategoriesRepository categoriesRepository;
 
     private MockMvc mockMvc;
 

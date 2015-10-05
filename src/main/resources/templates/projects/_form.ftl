@@ -2,12 +2,14 @@
     <label for="title" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-10">
     <@spring.formInput "project.name",  "class='form-control'" />
+    <@spring.showErrors "<br/>" />
     </div>
 </div>
 <div class="form-group">
     <label for="summary" class="col-sm-2 control-label">Description</label>
     <div class="col-sm-10">
     <@spring.formTextarea "project.description",  "class='form-control'" />
+    <@spring.showErrors "<br/>" />
     </div>
 </div>
 <div class="form-group">

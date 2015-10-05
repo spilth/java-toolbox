@@ -10,6 +10,7 @@
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Enabled</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -17,6 +18,7 @@
             <#list projects as project>
             <tr>
                 <td><a href="/projects/${project.id}">${project.name}</a></td>
+                <td>${project.enabled?string("Yes", "No")}</td>
                 <td><a href="/admin/projects/${project.id}/edit" class="btn">Edit</a></td>
             </tr>
             </#list>

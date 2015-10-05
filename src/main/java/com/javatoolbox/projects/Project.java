@@ -1,5 +1,7 @@
 package com.javatoolbox.projects;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,13 +12,19 @@ public class Project {
     @GeneratedValue
     Long id;
 
+    @NotBlank
     private String name;
+
+    @NotBlank
     private String description;
+
     private String websiteUrl;
     private String sourcecodeUrl;
     private String issuesUrl;
     private String groupId;
     private String artifactId;
+
+    private Boolean enabled;
 
     private Long categoryId;
 
@@ -90,6 +98,14 @@ public class Project {
 
     public void setArtifactId(String artifactId) {
         this.artifactId = artifactId;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
     public boolean isMavenDependency() {

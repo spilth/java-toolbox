@@ -26,6 +26,9 @@
             <ul class="nav navbar-nav">
                 <li><a href="/" id="projects">Projects</a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/projects/new">Submit A Project</a></li>
+            </ul>
         </div>
 
     </div>
