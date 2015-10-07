@@ -3,6 +3,8 @@
 
 # The Java Toolbox
 
+[![Join the chat at https://gitter.im/TheJavaToolbox/java-toolbox](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/TheJavaToolbox/java-toolbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Java Library and Tool Discovery Website
 
 ## Requirements
