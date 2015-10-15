@@ -16,20 +16,34 @@ import org.springframework.test.context.web.WebAppConfiguration;
 public class AdministrationTest extends SeleniumTest {
     @Test
     public void addingContent() {
+        addGroup();
         addCategory();
         addProject();
+    }
+
+    private void addGroup() {
+        goTo(getDefaultBaseUrl() + "/admin");
+
+        find("a").withText("New Group").click();
+        find("#name").fill("HTML and Markup");
+        find("input[type=submit]").click();
+        find("h1").should().contain("HTML and Markup");
+
+        find("#projects").click();
+        find("body").should().contain("HTML and Markup");
     }
 
     private void addCategory() {
         goTo(getDefaultBaseUrl() + "/admin");
 
         find("a").withText("New Category").click();
-        find("#name").fill("HTML and Markup");
+        find("#name").fill("Markup Processors");
+        find("#groupId").select("HTML and Markup");
         find("input[type=submit]").click();
-        find("h1").should().contain("HTML and Markup");
+        find("h1").should().contain("Markup Processors");
 
         find("#projects").click();
-        find("body").should().not().contain("HTML and Markup");
+        find("body").should().contain("Markup Processors");
     }
 
     private void addProject() {
@@ -38,7 +52,7 @@ public class AdministrationTest extends SeleniumTest {
         find("a").withText("New Project").click();
         find("#name").fill("Java Toolbox");
         find("#description").fill("A website for discovering Java libraries and tools");
-        find("#categoryId").select("HTML and Markup");
+        find("#categoryId").select("Markup Processors");
         find("#websiteUrl").fill("http://www.java-toolbox.com/");
         find("#sourcecodeUrl").fill("https://github.com/TheJavaToolbox/java-toolbox");
         find("#issuesUrl").fill("https://github.com/TheJavaToolbox/java-toolbox/issues");

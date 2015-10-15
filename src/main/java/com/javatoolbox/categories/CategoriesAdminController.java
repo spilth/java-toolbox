@@ -1,17 +1,26 @@
 package com.javatoolbox.categories;
 
+import com.javatoolbox.groups.Group;
+import com.javatoolbox.groups.GroupsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/admin/categories")
 public class CategoriesAdminController {
     @Autowired
-    CategoriesRepository categoriesRepository;
+    private CategoriesRepository categoriesRepository;
+
+    @Autowired
+    private GroupsRepository groupsRepository;
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String categoryNew(Model model) {
@@ -42,5 +51,18 @@ public class CategoriesAdminController {
         categoriesRepository.save(category);
 
         return "redirect:/categories/" + category.getId();
+    }
+
+
+    @ModelAttribute("groupsMap")
+    private Map<String, String> getGroups() {
+        Iterable<Group> groups = groupsRepository.findAll();
+
+        Map<String, String> groupsMap = new HashMap();
+        for (Group group : groups) {
+            groupsMap.put(String.valueOf(group.getId()), group.getName());
+        }
+
+        return groupsMap;
     }
 }

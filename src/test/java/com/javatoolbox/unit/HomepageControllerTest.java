@@ -2,8 +2,8 @@ package com.javatoolbox.unit;
 
 import com.javatoolbox.HomepageController;
 import com.javatoolbox.ToolboxApplication;
-import com.javatoolbox.categories.CategoriesRepository;
-import com.javatoolbox.categories.Category;
+import com.javatoolbox.groups.Group;
+import com.javatoolbox.groups.GroupsRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,7 +31,7 @@ public class HomepageControllerTest {
     HomepageController homepageController;
 
     @Mock
-    CategoriesRepository categoriesRepository;
+    GroupsRepository groupsRepository;
 
     private MockMvc mockMvc;
 
@@ -43,13 +43,13 @@ public class HomepageControllerTest {
 
     @Test
     public void homepageIndex_rendersIndex() throws Exception {
-        List<Category> categories = new ArrayList<>();
+        List<Group> groups = new ArrayList<>();
 
-        when(categoriesRepository.findAllByOrderByNameAsc()).thenReturn(categories);
-
+        when(groupsRepository.findAllByOrderByNameAsc()).thenReturn(groups);
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("index"))
-                .andExpect(model().attribute("categories", categories));
+                .andExpect(model().attribute("groups", groups));
+
     }
 }

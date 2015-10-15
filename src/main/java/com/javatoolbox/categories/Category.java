@@ -14,7 +14,9 @@ public class Category {
 
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Long groupId;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "categoryId")
     @Where(clause = "enabled = 1")
     @OrderBy("name")
@@ -34,6 +36,14 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
     }
 
     public Set<Project> getProjects() {

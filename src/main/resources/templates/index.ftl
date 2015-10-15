@@ -1,22 +1,20 @@
-<@main title="Projects by Category">
-<h1>Projects by Category</h1>
+<@main title="Groups and Categories">
+<h1>Groups and Categories</h1>
 
-<#list categories as category>
-    <#if category.getProjects()?has_content>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2 class="panel-title"><a href="/categories/${category.id}">${category.name}</a></h2>
-            </div>
-            <div class="panel-body">
-                <dl>
-                    <#list category.projects as project>
-                        <dt><a href="/projects/${project.id}">${project.name}</a></dt>
-                        <dd>${project.description}</dd>
-                    </#list>
-                </dl>
-            </div>
+<#list groups as group>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">${group.name}</h2>
         </div>
-    </#if>
+        <div class="panel-body">
+            <dl>
+                <#list group.categories as category>
+                    <dt><a href="/categories/${category.id}">${category.name}</a></dt>
+                </#list>
+            </dl>
+        </div>
+    </div>
 </#list>
+
 
 </@main>
