@@ -1,6 +1,9 @@
+[![Stories in Ready](https://badge.waffle.io/TheJavaToolbox/java-toolbox.png?label=ready&title=Ready)](https://waffle.io/TheJavaToolbox/java-toolbox)
 [![Circle CI](https://circleci.com/gh/TheJavaToolbox/java-toolbox.svg?style=svg)](https://circleci.com/gh/TheJavaToolbox/java-toolbox)
 
 # The Java Toolbox
+
+[![Join the chat at https://gitter.im/TheJavaToolbox/java-toolbox](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/TheJavaToolbox/java-toolbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Java Library and Tool Discovery Website
 
