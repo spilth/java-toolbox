@@ -1,19 +1,14 @@
 <@main title="Groups and Categories">
-<h1>Groups and Categories</h1>
 
 <#list groups as group>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h2 class="panel-title">${group.name}</h2>
-        </div>
-        <div class="panel-body">
-            <dl>
+    <#if group.categories?has_content>
+                <h2>${group.name}</h2>
                 <#list group.categories as category>
-                    <dt><a href="/categories/${category.id}">${category.name}</a></dt>
+                    <#if category.projects?has_content>
+                        <h3><a href="/categories/${category.id}">${category.name}</a></h3>
+                    </#if>
                 </#list>
-            </dl>
-        </div>
-    </div>
+    </#if>
 </#list>
 
 
