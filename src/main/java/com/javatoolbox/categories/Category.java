@@ -16,7 +16,7 @@ public class Category {
 
     private Long groupId;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "categoryId")
     @Where(clause = "enabled = 1")
     @OrderBy("name")

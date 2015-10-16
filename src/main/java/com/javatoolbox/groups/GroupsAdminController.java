@@ -13,6 +13,13 @@ public class GroupsAdminController {
     @Autowired
     GroupsRepository groupsRepository;
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String groupIndex(Model model) {
+        model.addAttribute("groups", groupsRepository.findAllByOrderByNameAsc());
+
+        return "admin/groups/index";
+    }
+
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String groupNew(Model model) {
         model.addAttribute("group", new Group());

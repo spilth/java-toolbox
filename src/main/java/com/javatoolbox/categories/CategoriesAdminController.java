@@ -22,6 +22,13 @@ public class CategoriesAdminController {
     @Autowired
     private GroupsRepository groupsRepository;
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String categoryIndex(Model model) {
+        model.addAttribute("categories", categoriesRepository.findAllByOrderByNameAsc());
+
+        return "admin/categories/index";
+    }
+
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String categoryNew(Model model) {
         model.addAttribute("category", new Category());

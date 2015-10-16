@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
+@RequestMapping("/admin")
 public class ProjectsAdminController {
     @Autowired
     private ProjectsRepository projectsRepository;
@@ -23,13 +24,20 @@ public class ProjectsAdminController {
     @Autowired
     private CategoriesRepository categoriesRepository;
 
-    @RequestMapping(value = "/admin/projects/new", method = RequestMethod.GET)
+    @RequestMapping(value = "/projects/", method = RequestMethod.GET)
+    public String projectIndex(Model model) {
+        model.addAttribute("projects", projectsRepository.findAllByOrderByNameAsc());
+
+        return "admin/projects/index";
+    }
+
+    @RequestMapping(value = "/projects/new", method = RequestMethod.GET)
     public String projectNew(Model model) {
         model.addAttribute("project", new Project());
         return "projects/new";
     }
 
-    @RequestMapping(value = "/admin/projects", method = RequestMethod.POST)
+    @RequestMapping(value = "/projects", method = RequestMethod.POST)
     public String projectCreate(@Valid Project project, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("project", project);
@@ -40,7 +48,7 @@ public class ProjectsAdminController {
         }
     }
 
-    @RequestMapping(value = "/admin/projects/{projectId}/edit", method = RequestMethod.GET)
+    @RequestMapping(value = "/projects/{projectId}/edit", method = RequestMethod.GET)
     public String projectEdit(@PathVariable("projectId") Long projectId, Model model) {
         Project project = projectsRepository.findOne(projectId);
 
@@ -49,7 +57,7 @@ public class ProjectsAdminController {
         return "projects/edit";
     }
 
-    @RequestMapping(value = "/admin/projects/{projectId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/projects/{projectId}", method = RequestMethod.PUT)
     public String projectUpdate(@PathVariable("projectId") Long projectId, @Valid Project project, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("project", project);
