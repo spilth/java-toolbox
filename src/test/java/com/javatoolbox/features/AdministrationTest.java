@@ -22,19 +22,23 @@ public class AdministrationTest extends SeleniumTest {
     }
 
     private void addGroup() {
-        goTo(getDefaultBaseUrl() + "/admin");
+        goToAdmin();
 
         find("a").withText("New Group").click();
         find("#name").fill("HTML and Markup");
         find("input[type=submit]").click();
         find("h1").should().contain("HTML and Markup");
 
-        find("#projects").click();
-        find("body").should().contain("HTML and Markup");
+        find("a").withText("Projects").first().click();
+        find("body").should().not().contain("HTML and Markup");
+    }
+
+    private SeleniumTest goToAdmin() {
+        return goTo(getDefaultBaseUrl() + "/admin");
     }
 
     private void addCategory() {
-        goTo(getDefaultBaseUrl() + "/admin");
+        goToAdmin();
 
         find("a").withText("New Category").click();
         find("#name").fill("Markup Processors");
@@ -42,12 +46,12 @@ public class AdministrationTest extends SeleniumTest {
         find("input[type=submit]").click();
         find("h1").should().contain("Markup Processors");
 
-        find("#projects").click();
-        find("body").should().contain("Markup Processors");
+        find("a").withText("Projects").first().click();
+        find("body").should().not().contain("Markup Processors");
     }
 
     private void addProject() {
-        goTo(getDefaultBaseUrl() + "/admin");
+        goToAdmin();
 
         find("a").withText("New Project").click();
         find("#name").fill("Java Toolbox");
@@ -65,8 +69,9 @@ public class AdministrationTest extends SeleniumTest {
         find("body").should().contain("Source Code");
         find("body").should().contain("Bug Tracker");
 
-        find("#projects").click();
-        find("body").should().contain("Java Toolbox");
+        find("a").withText("Projects").first().click();
+        find("body").should().contain("HTML and Markup");
+//        find("body").should().contain("Markup Processors");
     }
 
     @Override

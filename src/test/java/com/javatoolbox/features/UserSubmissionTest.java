@@ -36,7 +36,7 @@ public class UserSubmissionTest extends SeleniumTest {
         find("#artifactId").fill("blog");
         find("input[type=submit]").click();
 
-        find("#projects").click();
+        find("a").withText("Projects").click();
         find("body").should().not().contain("User Submitted Project");
 
         goTo(getDefaultBaseUrl() + "/admin");

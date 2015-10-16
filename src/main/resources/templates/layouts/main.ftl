@@ -24,7 +24,7 @@
 
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/" id="projects">Projects</a></li>
+                <li><a href="/">Projects</a></li>
                 <li><a href="/resources/">Resources</a></li>
                 <li><a href="/about/">About</a></li>
             </ul>
