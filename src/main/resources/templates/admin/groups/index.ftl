@@ -1,5 +1,5 @@
-<@main title="Admin - Groups">
-    <h1>Admin - Groups</h1>
+<@admin title="Admin - Groups">
+    <h1>Groups</h1>
 
     <div class="btn-group" role="group" aria-label="...">
         <a href="/admin/groups/" class="btn btn-default">Groups</a>
@@ -23,4 +23,4 @@
             </#list>
         </tbody>
     </table>
-</@main>
+</@admin>

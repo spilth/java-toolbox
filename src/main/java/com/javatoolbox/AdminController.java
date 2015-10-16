@@ -1,6 +1,6 @@
 package com.javatoolbox;
 
-import com.javatoolbox.projects.ProjectsRepository;
+import com.javatoolbox.groups.GroupsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class AdminController {
     @Autowired
-    private ProjectsRepository projectsRepository;
+    private GroupsRepository groupsRepository;
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String index(Model model) {
-        model.addAttribute("projects", projectsRepository.findAllByOrderByNameAsc());
+        model.addAttribute("groups", groupsRepository.findAllByOrderByNameAsc());
 
         return "admin/index";
     }
