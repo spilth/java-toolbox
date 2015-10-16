@@ -17,4 +17,14 @@ public class HomepageController {
 
         return "index";
     }
+
+    @RequestMapping("/about")
+    public String about() {
+        return "about";
+    }
+
+    @RequestMapping("/resources")
+    public String resources() {
+        return "resources";
+    }
 }
