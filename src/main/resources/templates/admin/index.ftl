@@ -24,7 +24,7 @@
                          <td>-</td>
                          <td><a href="/categories/${category.id}">${category.name}</a></td>
                          <td></td>
-                         <td><a href="/categories/${category.id}/edit">Edit</a></td>
+                         <td><a href="/admin/categories/${category.id}/edit">Edit</a></td>
                      </tr>
                     <#if category.projects?has_content>
                         <#list category.projects as project>
@@ -32,7 +32,7 @@
                             <td>-</td>
                             <td>-</td>
                             <td><a href="/projects/${project.id}">${project.name}</a></td>
-                            <td><a href="/projects/${project.id}/edit">Edit</a></td>
+                            <td><a href="/admin/projects/${project.id}/edit">Edit</a></td>
                         </tr>
                         </#list>
                     </#if>
