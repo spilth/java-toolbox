@@ -6,7 +6,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class ProjectTest {
-
     @Test
     public void isMavenDependency_hasGroupAndArtifact_returnsTrue() {
         Project project = new Project();

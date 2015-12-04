@@ -1,18 +1,13 @@
 package com.javatoolbox.unit;
 
 import com.javatoolbox.HomepageController;
-import com.javatoolbox.ToolboxApplication;
 import com.javatoolbox.groups.Group;
 import com.javatoolbox.groups.GroupsRepository;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.ArrayList;
@@ -23,9 +18,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ToolboxApplication.class})
-@WebAppConfiguration
 public class HomepageControllerTest {
     @InjectMocks
     HomepageController homepageController;
