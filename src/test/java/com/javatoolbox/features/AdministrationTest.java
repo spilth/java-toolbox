@@ -1,19 +1,9 @@
 package com.javatoolbox.features;
 
-import com.javatoolbox.ToolboxApplication;
 import net.codestory.simplelenium.SeleniumTest;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = ToolboxApplication.class)
-@WebAppConfiguration
-@IntegrationTest("server.port:9000")
-public class AdministrationTest extends SeleniumTest {
+public class AdministrationTest extends BaseFeatureTest {
     @Test
     public void addingContent() {
         addGroup();
@@ -71,11 +61,5 @@ public class AdministrationTest extends SeleniumTest {
 
         find("a").withText("Projects").first().click();
         find("body").should().contain("HTML and Markup");
-//        find("body").should().contain("Markup Processors");
-    }
-
-    @Override
-    protected String getDefaultBaseUrl() {
-        return "http://localhost:9000";
     }
 }
