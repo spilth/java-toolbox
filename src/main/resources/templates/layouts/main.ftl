@@ -45,7 +45,7 @@
     <div class="container">
         <div class="row text-muted">
             <div class="col-md-4 col-sm-4 footer-left">
-                <a href="https://github.com/TheJavaToolbox/java-toolbox">Website Source Code</a>
+                <a href="https://github.com/spilth/java-toolbox">Website Source Code</a>
             </div>
             <div class="col-md-4 col-sm-4 footer-center">
                 &copy; 2015 The Java Toolbox
